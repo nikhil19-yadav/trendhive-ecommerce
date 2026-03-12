@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
+<title> TrendHIVE website for shopping  products online.</title>
+<meta name="keywords" content="Online shopping store, online shopping site, buy online, online business, ecommerce,">
+<meta name="description" content="Check out products from the most trusted online shopping store that offers a convenient ecommerce experience with easy payment options.">
+<script src="https://trendhive.marketcentral.in/t1/js/jquery.min.js"></script>
+<script src="https://trendhive.marketcentral.in/commonfiles/common_script.js"></script>
+<link rel="stylesheet" href="https://www.marketcentral.in/css/newTheme/newHomePageCss/fonts.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    #qrImage .modal-body img {
+	height: 250px;
+	width: 250px;
+	object-fit: contain;
+    }
+    .filterSec li {
+    	list-style: none !important;
+	}
+    .quantity {
+        margin-right: 34px !important;
+    }
+    .form-group.flexStyle {
+        display: flex;
+        gap: 10px;
+    }
+    .viewImageModel div.form-group .viewCart {
+        padding: 7px 30px !important;
+        width: auto !important;
+        height: auto !important;
+    }
+    .quantityCount {
+        display: flex;
+        gap: 10px;
+        align-items: end;
+    }
+    #modalPopUp input#quantity {
+        width: 100px !important;
+    }
+    #productPopupCarousel .item {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .modal-body .smallImages img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    #quickViewIframe {
+        width: 250px;
+    }
+    .payMent img{
+        height: 24px !important;
+    }
+    #youtubeIframe {
+        height: 100% !important;
+    }
+    .cartItemList {
+        overflow-y: auto;
+        max-height: 190px!important;
+        width: 280px;
+        scrollbar-width: thin;   
+    }
+    #qrImage .modal-body {
+        display: flex;
+        justify-content: center;
+    }
+    #qrImage .close {
+        outline: none;
+    }
+    #productDetailSize{
+        appearance: auto !important;
+    }
+    .addtoCart{
+        cursor:pointer;
+    }
+    .viewContent .content {
+        width: 100% !important;
+        overflow:scroll;
+        display: block; 
+        padding-bottom: 10px !important; 
+    }   
+    .reviews .singleProduct .productName {
+        pointer-events: none;
+    }
+    #pills-tabContent table{
+        display:grid;
+        width: 100% !important;
+    }
+    #London table{
+        width: 100% !important;
+    }
+    #London{
+        overflow: scroll;
+    }
+    .contactusContent p,.aboutusContent p {
+        word-break: break-word;
+    }
+    .slider_contact{
+        display:block;
+        gap:5px;
+        padding: 3px 0 25px 0;
+        width:90%;
+        margin:0 auto;
+    }
+    .slider_contact img{
+        max-width:20px;
+    }
+    .slider_contact{
+        font-size: 18px;
+        color:#000;
+        font-family: "Montserrat", sans-serif;
+    }
+    .aboutusImage {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        height: 300px;
+        height: 100%;
+        /* aspect-ratio: 2/3; */
+        width: 100%;
+        padding:30px 0;
+        background-color:#fff;
+    }
+    .aboutusImage img {
+        width: unset!important;
+        max-height:400px;
+        object-fit: scale-down;
+        max-width: 400px;
+    }
+    .slider_banner h1 {
+        color: #000;
+        text-align: center;
+        font-size: 48px;
+        font-weight: 500;
+        font-family: "Montserrat", sans-serif;
+    }
+    .slider_shop_now{
+        color: #000;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        border-radius: 10px;
+        border-radius: 20px;
+        border: 1px solid #000!important;
+        padding:5px 15px;
+        font-family: "Montserrat", sans-serif;
+    }
+    .slider_banner{
+        padding:70px 0;
+        text-align:center;
+        border-radius: 10px;
+        border: 1px solid #696C79;
+        background: #FFF;
+        width:95%;
+        margin:30px auto;
+    }
+    .iconText {
+        border-bottom: 1px solid #dddddd;
+        border-top: unset !important;
+        padding: 10px 0;
+        display: flex!important;
+        align-items: center;
+	    gap: 10px;
+    }
+    .iconText i{
+        margin:0!important;
+    }
+    .quantity span {
+        max-width: 45px;
+        display: flex!important;
+        justify-content: center;
+    }
+    #autoSizingCheck2{
+        margin-top: 0.4rem!important;
+    }
+    .mgTop {
+        margin: 10px 0;
+    }
+    .mgTop.pdTop {
+        border-top:none!important;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px){
+        .form-group.flexStyle {
+            flex-direction: column !important;
+        }              
+    }
+    @media screen and (max-width: 1200px){
+        #pills-tabContent table{
+        display:grid;
+        width: 100% !important;
+        overflow:scroll;
+    }
+    }
+    @media only screen and (max-width:767px){
+        .btn.viewCart,.btn.cartBtn.mb-2{
+            margin-top:15px!important;
+        }
+        .slider_contact {
+            font-size: 16px;
+        }
+        #exampleFormControlSelect1{
+            padding: 0 15px;
+        }
+        .aboutusImage img {
+            max-height:250px;
+        }
+        .slider_banner h1 {
+            font-size: 30px;
+            width:90%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .slider_shop_now {
+            font-size: 16px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        #quickViewIframe {
+            height: fit-content;
+            width: -webkit-fill-available;
+            width: -moz-available;
+        }
+    }
+    
+    .banner_one,.fixed_header_banner, .banner_one_bottom,.banner_one_bottom_zero {
+        padding: 100px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        height:60vh;
+    }
+    .banner_one h1,.fixed_header_banner h1, .banner_one_bottom h1,.banner_one_bottom_zero h1{
+        color:#000;
+        font-size:50px;
+        font-weight:600;
+        text-align:center;
+    }
+    .banner_one h1::first-letter,.fixed_header_banner h1::first-letter,.banner_one_bottom h1::first-letter,.banner_one_bottom_zero h1::first-letter{
+        text-transform: capitalize;
+    }
+    .banner_one a,.fixed_header_banner a, .banner_one_bottom a,.banner_one_bottom_zero a{
+	    font-size: 18px;
+        color: #000;
+        text-align:center;
+        font-weight:600;
+    }
+    .banner_one a:hover,.fixed_header_banner a:hover, .banner_one_bottom a:hover,.banner_one_bottom_zero a:hover{
+        color:#0e3061;
+    }
+    .slider_fixed_banner {
+        margin: 160px 0 70px 0;
+    }
+    .banner_one_bottom{
+        padding:100px 0 50px 0;
+    }
+    .banner_one_bottom_zero {
+        padding:100px 0 0 0;
+    }
+    .header {
+        box-shadow: 0 0 6px gray;
+    }
+    /* .banner_one,.fixed_header_banner, .banner_one_bottom,.banner_one_bottom_zero  {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    } */
+    @media only screen and (max-width:767px){
+        .banner_one h1,.fixed_header_banner h1, .banner_one_bottom h1,.banner_one_bottom_zero h1 {
+            font-size: 30px;
+        }
+        .banner_one a,.fixed_header_banner a, .banner_one_bottom a,.banner_one_bottom_zero a{
+            font-size: 16px;
+        }
+    }
+    loginForm strong {
+        color: red!important;
+        font-size: 14px;
+        font-weight: 400;
+    }   
+    /* .swal2-container.swal2-top-end.swal2-backdrop-show{
+        position: absolute;
+        top: 90px;
+    }
+    .swal2-popup.swal2-modal.custom-swaltimer-font.swal2-show{
+        position: absolute;
+        top:0;
+    } */
+    .slider_shop_now:hover{
+        background-color: #fff!important;
+    }    
+    .d-inline.starIcons {
+        pointer-events: none;
+    }
+    .slider_shop_now:hover{
+        border: 1px solid #000!important;
+    }
+    @media only screen and (max-width:767px){
+        .checkout.sctn .container{
+            max-width:100%;
+        }
+        .inner_check h1 {
+            font-size: 30px;
+        }
+        .inner_check h3 {
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .orderDetails .table thead th {
+            font-size: 20px;
+        }
+        .orderDetails .table thead td {
+            border: none;
+            font-size: 17px;
+            padding-top: 0;
+        }
+        .inner_check {
+            padding: 20px;
+        }
+        
+        .orderDetails .table thead th {
+            font-size: 20px!important;
+        }
+        .orderDetails .table thead td {
+            font-size: 18px!important;
+        }
+    }
+    @media only screen and (max-width:500px){
+        .inner_check {
+            width: 91%;
+        }
+        .orderDetails table{
+            width:500px;
+        }
+        .orderDetails{
+            overflow-x:scroll;
+        }
+    }
+    .contactusContent pre{
+        position:absolute;
+    }
+    .iconText {
+        border-bottom: 1px solid #dddddd;
+        border-top: unset !important;
+        width: 100%;
+        display: block;
+        padding: 10px 0;
+    }
+    .contactIcons .mgTop {
+        margin: 0;
+    }
+    .contactIcons .mgTop.pdTop{
+        border:none;
+        padding:0;
+    }
+    .contactIcons .iconText::before {
+        display:none!important;
+    }
+    .dropdown-divider{
+        width:100%!important;
+    }
+    .categoryTwo p {
+        color: #000;
+    }
+    .relatedProducts .owl-next.disabled,.relatedProducts .owl-prev.disabled  {
+        opacity: 0.5;
+    }
+    @media only screen and (max-width:767px){
+    .allProducts .proctShow:hover .addtoCart, .allProducts .proctShow .addtoCart {
+        visibility: visible!important;
+        animation-name: unset!important;
+        animation-duration: unset!important;
+        position: relative!important;
+        z-index: 9!important;
+    }
+    .addtoCart{
+        visibility: visible!important;
+    }
+    .categoryTwo p {
+	    font-size: 12px;
+    }
+    .relatedProducts .item{
+        width:100%;
+    }
+    
+    
+    }
+    .items_list {
+        padding: 0 10px;
+    }   
+    .cartTable .table-responsive {
+        overflow-x: scroll!important;
+    }
+    .cartItemList {
+        padding-left: 10px;
+    }
+    .myAccountSctn .addresses {
+        gap: 30px;
+    }
+    .myAccountSctn .shippingAddress,.myAccountSctn .billingAddress {
+        width: 100%;
+    }
+    .owl-next.disabled,.owl-prev.disabled{
+        opacity:0.5;
+        cursor:inherit!important;
+    }
+    .owl-next.disabled:hover .carouselPrev,.owl-prev.disabled:hover .carouselPrev{
+        pointer-events:none;
+    }
+    .editDet {
+        display: flex;
+        gap: 40px;
+    }
+    @media screen and (max-width: 992px) {
+        .iconPlaceHeart, .iconPlaceEye {
+            display: flex;
+        }
+        .myAccountSctn td:last-child {
+            display: revert!important;
+            gap: 10px;
+        }
+        .view_cancel_buttons{
+            display:flex;
+            gap:5px;
+            flex-wrap:wrap;
+        }
+    }
+</style>
+<style>
+    /* Existing styles... */
+
+    .social_media ul li a {
+        font-size: 80px; /* Increase the size as needed */
+        margin: 0 90px; /* Optional: Add some spacing between icons */
+    }
+
+    /* Other existing styles... */
+</style>
+<script>
+   /* $('.addtoCart').click(function(){
+		window.location.href = 'cart.cfm';
+    })*/
+</script>
+
+        <link rel="shortcut icon" href="https://www.marketcentral.in/customerFiles/90484/Logos/IMG-20241126-WA0032.jpg" type="image/x-icon">
+        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://trendhive.marketcentral.in//fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://trendhive.marketcentral.in/t1/css/animate.css"> 
+    <link rel="stylesheet" href="https://trendhive.marketcentral.in/t1/owlCarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://trendhive.marketcentral.in/t1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://trendhive.marketcentral.in/t1/css/innerPages.css">
+    <link rel="stylesheet" href="https://trendhive.marketcentral.in/t1/css/homepage.css">
+    <link rel="stylesheet" href="https://trendhive.marketcentral.in/t1/css/footer.css">
+    <link rel="stylesheet" href="https://trendhive.marketcentral.in/t1/css/header.css">
+    <link rel="stylesheet" href="https://trendhive.marketcentral.in/t1/css/responsive.css">
+    <script src="https://kit.fontawesome.com/1f2da28ec6.js"crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+    </head>
+    <body>
+       
+        <!-- Start Header Section -->
+        
+<!-- Header Section -->
+<header class="header_area">
+    <!-- Header Top -->
+    <div class="header_top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="site_logo">                       
+                        
+                            <a href="https://trendhive.marketcentral.in/t1/index.cfm">                     
+                               <img src="https://www.marketcentral.in/customerFiles/90484/Logos/scaledLogo/customerLogo.jpg" alt="logo">                       
+                            </a>
+                        
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <!-- Navigation Bar-->
+                    <div class="main_navigation d-flex justify-content-end align-items-center">
+                        <nav class="navbar navbar-expand-md navbar-dark menuList">
+                            <button id="ChangeToggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                                <div id="navbar-close" class="hidden">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            </button>
+                            <div class="collapse navbar-collapse navbar justify-content-center" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="https://trendhive.marketcentral.in/t1/index.cfm">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="https://trendhive.marketcentral.in/t1/products.cfm">Shop</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="https://trendhive.marketcentral.in/t1/aboutUs.cfm">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="https://trendhive.marketcentral.in/t1/contactUs.cfm">Contact Us</a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </nav>
+                        
+                        <div class="user_cart text-right">
+                            <ul>
+                                
+                                <li class="d-inline cart dropdown">
+                                    
+                                        <a class="dropdown" href="#" role="button">
+                                            <img width="24" src="https://trendhive.marketcentral.in/t1/images/shopping-cart-white.svg" alt="Cart">
+                                            <span class="cart_badge">0</span>
+                                        </a>
+                                        <div class="dropdown-menu cartDropdown">
+                                            <div class="dropdown-item">
+                                                <div class="cartItemList">
+                                                No items in cart
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                </li>
+                                
+                                <li>
+                                    <button id="search_btn" class="search_btn" type="button"><img width="20" src="https://trendhive.marketcentral.in/t1/images/search-white.svg" alt="Search"></button>
+                                    <div class="search_box" id="search_box">
+                                        <form action="https://trendhive.marketcentral.in/t1/products.cfm">
+                                            <div class="search_fields">
+                                                <div class="form-group">
+                                                    <input type="text" value="" placeholder="Search by keyword" name="searchBox" class="form-control" autofocus>
+                                                    <button type="submit"><i class="fas fa-search"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Out Of Stock Products</h4>
+        <button type="button" class="close-mark" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+         <div class="outer_wrapper">
+        
+                <div class="slider_banner">
+                    <h1 style="font-family: 'Montserrat'; color:#000000; border-color:#000000;">TrendHIVE</h1>
+                    <a class="slider_contact"  href=""><span><img src="https://www.marketcentral.in/images/newTheme/hero_map.svg"></span> ews 256 sector x barra 2 kanpur Kanpur Uttar Pradesh India 208027</a>
+                    <a style="font-family: 'Montserrat'; color:#000000; border-color:#000000;" class="slider_shop_now" href="products.cfm">Shop Now</a>
+                </div>
+            
+                
+         </div>
+       
+        
+         
+        <!-- Newest Items Section -->
+        <div class="newest_items">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="best_seller_wrapper d-flex justify-content-start">
+                            <div class="best_seller_heading d-flex align-items-center justify-content-center">
+                                <div class="best_seller_text">
+                                    <h2>Our New Products</h2>
+                                    <p>Shop our most popular <br class="rwd-line" />products for this season.</p>
+                                    <a href="products.cfm">View More</a>
+                                </div>
+                            </div>
+                            <div class="best_seller_carousel">
+                                <div class="newest_items_carousel owl-carousel">
+                               
+                                  
+                                    <div class="single_new_item proctShow text-center">
+                                        <div class="newitem_image">
+                                            <a href="productdetails.cfm?prodId=1">
+                                                
+                                                    <img src="https://www.marketcentral.in/customerFiles/90484/ProductImages/smallImages/IMG-20241126-WA0034(1)125456.jpg" alt="product">
+                                                
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="newitem_details">                                            
+                                                <div class="newitem_details_text">
+                                                    <h4 class="prod_title"><a href="productdetails.cfm?prodId=1">Hoodie</a></h4>  
+                                                        
+                                                            <div class="prod_price">
+                                                                Rs. 500 
+                                                            </div>
+                                                        
+                                                </div> 
+                                                                      
+                                                                        
+                                            <div class="quick_cart">
+                                                
+                                                     <button type="button" id="1" class="add_cart viewCart addtoCartitem"><img width="33" src="./images/QA_ShoppingCartR.svg" alt=""></button>
+                                                
+                                                <button type="button" id="1" class="quick_view openQuickView" data-toggle="modal" data-target="#exampleModalCenter"><img width="27" src="./images/view.svg" alt=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="single_new_item proctShow text-center">
+                                        <div class="newitem_image">
+                                            <a href="productdetails.cfm?prodId=2">
+                                                
+                                                    <img src="https://www.marketcentral.in/customerFiles/90484/ProductImages/smallImages/IMG-20241126-WA0034(1)107984.jpg" alt="product">
+                                                
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="newitem_details">                                            
+                                                <div class="newitem_details_text">
+                                                    <h4 class="prod_title"><a href="productdetails.cfm?prodId=2">Hoodie</a></h4>  
+                                                        
+                                                            <div class="prod_price">
+                                                                Rs. 500 
+                                                            </div>
+                                                        
+                                                </div> 
+                                                                      
+                                                                        
+                                            <div class="quick_cart">
+                                                
+                                                     <button type="button" id="2" class="add_cart viewCart addtoCartitem"><img width="33" src="./images/QA_ShoppingCartR.svg" alt=""></button>
+                                                
+                                                <button type="button" id="2" class="quick_view openQuickView" data-toggle="modal" data-target="#exampleModalCenter"><img width="27" src="./images/view.svg" alt=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="single_new_item proctShow text-center">
+                                        <div class="newitem_image">
+                                            <a href="productdetails.cfm?prodId=3">
+                                                
+                                                    <img src="https://www.marketcentral.in/customerFiles/90484/ProductImages/smallImages/IMG-20241126-WA0036122684.jpg" alt="product">
+                                                
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="newitem_details">                                            
+                                                <div class="newitem_details_text">
+                                                    <h4 class="prod_title"><a href="productdetails.cfm?prodId=3">T shirt</a></h4>  
+                                                        
+                                                            <div class="prod_price">
+                                                                Rs. 450 
+                                                            </div>
+                                                        
+                                                </div> 
+                                                                      
+                                                                        
+                                            <div class="quick_cart">
+                                                
+                                                     <button type="button" id="3" class="add_cart viewCart addtoCartitem"><img width="33" src="./images/QA_ShoppingCartR.svg" alt=""></button>
+                                                
+                                                <button type="button" id="3" class="quick_view openQuickView" data-toggle="modal" data-target="#exampleModalCenter"><img width="27" src="./images/view.svg" alt=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="single_new_item proctShow text-center">
+                                        <div class="newitem_image">
+                                            <a href="productdetails.cfm?prodId=4">
+                                                
+                                                    <img src="https://www.marketcentral.in/customerFiles/90484/ProductImages/smallImages/IMG-20241126-WA0037103922.jpg" alt="product">
+                                                
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="newitem_details">                                            
+                                                <div class="newitem_details_text">
+                                                    <h4 class="prod_title"><a href="productdetails.cfm?prodId=4">Jogger</a></h4>  
+                                                        
+                                                            <div class="prod_price">
+                                                                Rs. 400 
+                                                            </div>
+                                                        
+                                                </div> 
+                                                                      
+                                                                        
+                                            <div class="quick_cart">
+                                                
+                                                     <button type="button" id="4" class="add_cart viewCart addtoCartitem"><img width="33" src="./images/QA_ShoppingCartR.svg" alt=""></button>
+                                                
+                                                <button type="button" id="4" class="quick_view openQuickView" data-toggle="modal" data-target="#exampleModalCenter"><img width="27" src="./images/view.svg" alt=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="single_new_item proctShow text-center">
+                                        <div class="newitem_image">
+                                            <a href="productdetails.cfm?prodId=5">
+                                                
+                                                    <img src="https://www.marketcentral.in/customerFiles/90484/ProductImages/smallImages/IMG-20241126-WA0038101490.jpg" alt="product">
+                                                
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="newitem_details">                                            
+                                                <div class="newitem_details_text">
+                                                    <h4 class="prod_title"><a href="productdetails.cfm?prodId=5">Shirt</a></h4>  
+                                                        
+                                                            <div class="prod_price">
+                                                                Rs. 600 
+                                                            </div>
+                                                        
+                                                </div> 
+                                                                      
+                                                                        
+                                            <div class="quick_cart">
+                                                
+                                                     <button type="button" id="5" class="add_cart viewCart addtoCartitem"><img width="33" src="./images/QA_ShoppingCartR.svg" alt=""></button>
+                                                
+                                                <button type="button" id="5" class="quick_view openQuickView" data-toggle="modal" data-target="#exampleModalCenter"><img width="27" src="./images/view.svg" alt=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 
+                               
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        <!-- Start Footer Section -->
+        
+<!-- Start Footer Section -->
+<footer class="footer_area">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="footer_top_content text-center">
+                        <a href="https://trendhive.marketcentral.in/t1/index.cfm" class="footer_logo">                     
+                            <img src="https://www.marketcentral.in/customerFiles/90484/Logos/scaledLogo/customerLogo.jpg" alt="logo" class="footer_logo">                       
+                        </a>
+                        <ul class="footer_contactinfo d-flex justify-content-center align-items-center">
+                            <li><a href="mailto:prashantsingh1842@gmail.com">prashantsingh1842@gmail.com</a></li>
+                            <li><a href="mailto:subhamtomar98@gmail.com">subhamtomar98@gmail.com</a></li>
+                            <li><a href="mailto:priyanshukumar10188@gmail.com">priyanshukumar10188@gmail.com</a></li>
+                            <li><a href="mailto:nikhil20041019yadav@gmail.com">nikhil20041019yadav@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer_bottom_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer_bottom d-flex justify-content-between align-items-center">
+                        <div class="social_media">
+                            <ul class="d-flex justify-content-center">
+                                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="copyright_text">
+                            <p>Copyright &copy; 2024 TrendHIVE. All Right Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="footer_bottom_menu d-flex justify-content-center">
+                        <ul class="d-flex">
+                            <li><a href="https://trendhive.marketcentral.in/t1/aboutUs.cfm">About Us</a></li>
+                            <li><a href="https://trendhive.marketcentral.in/t1/contactUs.cfm">Contact Us</a></li>
+                            <li><a href="https://trendhive.marketcentral.in/t1/privacyPolicy.cfm">Privacy Policy</a></li>
+                            <li><a href="https://trendhive.marketcentral.in/t1/termsAndConditions.cfm">Terms and Conditions</a></li>
+                            <li><a href="https://trendhive.marketcentral.in/t1/refundCancelation.cfm">Cancellation, Refund & Return Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- /End Footer Section -->
+        <!-- /End Footer Section -->
+        
+        <!-- Pop Up -->
+        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body" id="modalPopUp">
+            </div>
+        </div>
+    </div>
+</div> 
+    <script src="https://trendhive.marketcentral.in/t1/js/jquery-3.2.1.min.js"></script>
+    <script src="https://trendhive.marketcentral.in/t1/owlCarousel/owl.carousel.min.js"></script>
+    
+    <script src="https://trendhive.marketcentral.in/t1/js/popper.min.js"></script>
+    <script src="https://trendhive.marketcentral.in/t1/js/bootstrap.min.js"></script>
+    <script src="https://trendhive.marketcentral.in/t1/js/custom.js"></script>
+    <script href="../fontawesome-free-6.6.0-web/js/all.min.js"></script>
+ 
+        <script>
+        $(document).ready(function () {
+            
+        });
+        $(".productCategories").on("click", function() {
+	$(this).toggleClass("active");
+	$('.filterList').toggleClass("listActive");
+});
+        </script>
+    </body>
+</html>
